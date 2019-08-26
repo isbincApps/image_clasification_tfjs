@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Image Classifier</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+   <section>
+   	<section class="hero is-primary is-medium">
+	  <div class="hero-body">
+	    <div class="container">
+	      <h1 class="title">
+	        Image Classifier
+	      </h1>
+	      <h2 class="subtitle">
+	        Choose your image
+	      </h2>
+	      <!--
+	      <h2 id="lbl-prediction" class="subtitle" style="background: #fff;
+			    color: #000;
+			    width: fit-content;
+			    padding: 10px;">
+	      </h2>
+	  -->
+	    </div>
+	  </div>
+	</section>
+    <div class="container has-text-centered" style="margin-top: -100px; padding-bottom: 50px">
+      <figure class="image">
+		  <img id="img_preview" style="width: 224px; height: 224px; margin: auto;" width=224 height=224 src="https://bulma.io/images/placeholders/256x256.png">
+		  <figcaption id="lbl-prediction">
+		  </figcaption>
+		</figure>  
+		<!--
+			src="https://bulma.io/images/placeholders/256x256.png"
+         crossOrigin src="https://i.imgur.com/JlUvsxa.jpg"
+		-->
+		<div class="columns" style=" width: 40%; margin: auto; margin-top: 30px;">
+			<div class="column">
+			   <button class="button is-primary is-outlined" onclick="$('#txt_file').click()">
+                 Upload image
+			   </button>
+			</div>
+			<div class="column is-primary">
+				<button class="button is-primary is-outlined is-loading" id="bt-predict">
+                 Predict
+			   </button>
+			</div>
+		</div>
+		<div style=" width: 40%; margin: auto; margin-top: 30px;">
+			<table id="tbl-results" class="table is-bordered" style="width: 100%">
+				<thead>
+					<tr>
+                       <th>Prediction</th>
+                       <th>score</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
+		</div>
+		<input type="file" style="display: none" id="txt_file" accept="image/*">
+    </div>
+  </section>
+  <!--
+  <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+  <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+-->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<!-- Load the MobileNet model. -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script> 
+  <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
